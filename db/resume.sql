@@ -91,7 +91,8 @@ VALUES
 INSERT INTO experience (name, title, description, city, state, start_date, end_date)
 VALUES 
     ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Gained hands on experience building dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09', '2018-06'),
-    ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10', '2017-09')
+    ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10', '2017-09'),
+    ('Asian American Writers'' Workshop', 'Digital Media Intern', 'Design posters for events and curate Asian American literature on social media via Hootsuite', 'New York', 'NY', '2015-06', '2015-08')
 ;
 
 INSERT INTO degrees (education_id, level, name)
@@ -103,7 +104,8 @@ INSERT INTO projects (experience_id, name, role, description, start_date, end_da
 VALUES 
     (1, 'Smood', null, 'Track your moods', '2018-05', '2018-06', 'https://github.com/helencho/smood', 'https://smood.herokuapp.com'),
     (1, 'Elevate', 'Design Lead', 'Organize and manage job applications', '2018-04', '2018-05', null, null),
-    (1, 'Sinistagram', null, 'Instagram inspired photo sharing app for the sinister', null, null, null, null)
+    (1, 'Sinistagram', 'Technical Lead', 'Instagram inspired photo sharing app for the sinister', null, null, null, null),
+    (1, 'Madlify', null, 'MadLibs inspired phrasal template word game', null, null, 'https://github.com/helencho/madlify', 'https://madlify.netlify.com/')
 ;
 
 INSERT INTO skills (name, description)
