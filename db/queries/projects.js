@@ -1,9 +1,9 @@
-const db = require('../index')
+const db = require('../index');
 
 // GET : /projects 
 const getAll = (req, res) => {
     db
-        .any("SELECT projects.id, projects.project_name, projects.description, projects.end_date, array_agg(skill) AS skills, (SELECT json_build_object('source', source, 'live', live) FROM projects c WHERE projects.id = c.id) AS links FROM projects LEFT JOIN tech_stacks ON projects.id = tech_stacks.project_id LEFT JOIN skills ON tech_stacks.skill_id = skills.id GROUP BY projects.id ORDER BY projects.end_date DESC;")
+        .any("SELECT projects.id, projects.project_name, projects.description, to_char(projects.start_date, 'mm/yyyy') as start_date, to_char(projects.end_date, 'mm/yyyy') as end_date, array_agg(skill) AS skills, (SELECT json_build_object('source', source, 'live', live) FROM projects c WHERE projects.id = c.id) AS links FROM projects LEFT JOIN tech_stacks ON projects.id = tech_stacks.project_id LEFT JOIN skills ON tech_stacks.skill_id = skills.id GROUP BY projects.id ORDER BY projects.end_date DESC;")
         .then(data => {
             res.status(200).json({
                 status: 'Success',
@@ -22,7 +22,7 @@ const getAll = (req, res) => {
 // GET : /projects/:id 
 const getOne = (req, res) => {
     db
-        .one('QUERY STRING', {
+        .one("SELECT projects.id, projects.project_name, projects.description, to_char(projects.start_date, 'mm/yyyy') as start_date, to_char(projects.end_date, 'mm/yyyy') as end_date, array_agg(skill) AS skills, (SELECT json_build_object('source', source, 'live', live) FROM projects c WHERE projects.id = c.id ) AS links FROM projects LEFT JOIN tech_stacks ON projects.id = tech_stacks.project_id LEFT JOIN skills ON tech_stacks.skill_id = skills.id WHERE projects.id=${id} GROUP BY projects.id ORDER BY projects.end_date DESC;", {
             id: req.params.id
         })
         .then(data => {
