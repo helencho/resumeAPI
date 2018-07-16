@@ -5,7 +5,7 @@ CREATE DATABASE resume;
 DROP TABLE education;
 CREATE TABLE education (
     id SERIAL UNIQUE, 
-    name VARCHAR NOT NULL, 
+    school_name VARCHAR NOT NULL, 
     start_date VARCHAR,
     end_date VARCHAR, 
     city VARCHAR,
@@ -16,7 +16,7 @@ CREATE TABLE education (
 DROP TABLE experience;
 CREATE TABLE experience (
     id SERIAL UNIQUE,
-    name VARCHAR NOT NULL,
+    workplace VARCHAR NOT NULL,
     title VARCHAR NOT NULL,
     description VARCHAR NOT NULL,
     city VARCHAR,
@@ -31,7 +31,7 @@ CREATE TABLE degrees (
     id SERIAL UNIQUE, 
     education_id INTEGER,
     level VARCHAR NOT NULL,
-    name VARCHAR NOT NULL,
+    title VARCHAR NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (education_id) REFERENCES education(id) 
 );
@@ -40,11 +40,11 @@ DROP TABLE projects;
 CREATE TABLE projects (
     id SERIAL UNIQUE,
     experience_id INTEGER,
-    name VARCHAR NOT NULL,
+    project_name VARCHAR NOT NULL,
     role VARCHAR,
     description VARCHAR NOT NULL,
-    start_date VARCHAR,
-    end_date VARCHAR,
+    start_date DATE,
+    end_date DATE,
     source VARCHAR,
     live VARCHAR,
     PRIMARY KEY (id),
@@ -54,7 +54,7 @@ CREATE TABLE projects (
 DROP TABLE skills;
 CREATE TABLE skills (
     id SERIAL UNIQUE, 
-    name VARCHAR NOT NULL,
+    skill VARCHAR NOT NULL,
     description VARCHAR,
     PRIMARY KEY (id)
 );
@@ -82,33 +82,33 @@ CREATE TABLE contact (
 );
 
 -- Seed data 
-INSERT INTO education (name, start_date, end_date, city, state)
+INSERT INTO education (school_name, start_date, end_date, city, state)
 VALUES 
     ('University at Albany', '2009', '2014', 'Albany', 'NY'),
     ('Herricks High School', null, '2009', 'New Hyde Park', 'NY')
 ;
 
-INSERT INTO experience (name, title, description, city, state, start_date, end_date)
+INSERT INTO experience (workplace, title, description, city, state, start_date, end_date)
 VALUES 
     ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Gained hands on experience building dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09', '2018-06'),
     ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10', '2017-09'),
     ('Asian American Writers'' Workshop', 'Digital Media Intern', 'Design posters for events and curate Asian American literature on social media via Hootsuite', 'New York', 'NY', '2015-06', '2015-08')
 ;
 
-INSERT INTO degrees (education_id, level, name)
+INSERT INTO degrees (education_id, level, title)
 VALUES 
     (1, 'Bachelor of Arts', 'English Literature')
 ;
 
-INSERT INTO projects (experience_id, name, role, description, start_date, end_date, source, live)
+INSERT INTO projects (experience_id, project_name, role, description, start_date, end_date, source, live)
 VALUES 
-    (1, 'Smood', null, 'Track your moods', '2018-05', '2018-06', 'https://github.com/helencho/smood', 'https://smood.herokuapp.com'),
-    (1, 'Elevate', 'Design Lead', 'Organize and manage job applications', '2018-04', '2018-05', null, null),
-    (1, 'Sinistagram', 'Technical Lead', 'Instagram inspired photo sharing app for the sinister', null, null, null, null),
-    (1, 'Madlify', null, 'MadLibs inspired phrasal template word game', null, null, 'https://github.com/helencho/madlify', 'https://madlify.netlify.com/')
+    (1, 'Smood', null, 'Track your moods', '2018-05-01', '2018-06-01', 'https://github.com/helencho/smood', 'https://smood.herokuapp.com'),
+    (1, 'Elevate', 'Design Lead', 'Organize and manage job applications', '2018-04-01', '2018-05-01', null, null),
+    (1, 'Sinistagram', 'Technical Lead', 'Instagram inspired photo sharing app for the sinister', null, '2018-01-04', null, null),
+    (1, 'Madlify', null, 'MadLibs inspired phrasal template word game', null, '2018-01-02', 'https://github.com/helencho/madlify', 'https://madlify.netlify.com/')
 ;
 
-INSERT INTO skills (name, description)
+INSERT INTO skills (skill, description)
 VALUES 
     ('JavaScript', 'Javascript'),
     ('React', 'JavaScript framework'),
