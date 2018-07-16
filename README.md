@@ -2,13 +2,13 @@
 
 My resume in RESTful API.  
 
-I decided to create this project for a multiple of reasons: 
+I decided to create this project for a multitude of reasons: 
 
 - I read an MDN article on [server-side programming](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps) 
 
 - I needed more experience with server-side programming 
 
-- I wanted to get an in-depth understanding of Express 
+- I wanted to play around with JSON responses 
 
 - Simon did it first. Take a look at his [Portfolio Rest API](http://simonyo.us/#projects)
 
