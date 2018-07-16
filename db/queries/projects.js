@@ -7,8 +7,29 @@ const getAll = (req, res) => {
         .then(data => {
             res.status(200).json({
                 status: 'Success',
-                data: data,
-                message: 'Retrieved all projects'
+                message: 'Retrieved all projects',
+                data: data
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                message: err.message,
+                error: {}
+            })
+        })
+}
+
+// GET : /projects/:id 
+const getOne = (req, res) => {
+    db
+        .one('QUERY STRING', {
+            id: req.params.id
+        })
+        .then(data => {
+            res.status(200).json({
+                status: 'Success',
+                message: 'Retrieved one project',
+                data: data
             })
         })
         .catch(err => {
@@ -20,5 +41,6 @@ const getAll = (req, res) => {
 }
 
 module.exports = {
-    getAll
+    getAll,
+    getOne
 }
