@@ -3,7 +3,7 @@ const db = require('../index')
 // GET : / 
 const getAll = (req, res) => {
     db
-        .any('QUERY STRING')
+        .any("SELECT * FROM contact;")
         .then(data => {
             res.status(200).json({
                 status: 'Success',
