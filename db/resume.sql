@@ -21,8 +21,8 @@ CREATE TABLE experience (
     description VARCHAR NOT NULL,
     city VARCHAR,
     state VARCHAR NOT NULL,
-    start_date VARCHAR,
-    end_date VARCHAR, 
+    start_date DATE,
+    end_date DATE, 
     PRIMARY KEY (id) 
 );
 
@@ -90,9 +90,9 @@ VALUES
 
 INSERT INTO experience (workplace, title, description, city, state, start_date, end_date)
 VALUES 
-    ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Gained hands on experience building dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09', '2018-06'),
-    ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10', '2017-09'),
-    ('Asian American Writers'' Workshop', 'Digital Media Intern', 'Design posters for events and curate Asian American literature on social media via Hootsuite', 'New York', 'NY', '2015-06', '2015-08')
+    ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Gained hands on experience building dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09-18', '2018-06-28'),
+    ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10-01', '2017-09-03'),
+    ('Asian American Writers'' Workshop', 'Digital Media Intern', 'Design posters for events and curate Asian American literature on social media via Hootsuite', 'New York', 'NY', '2015-06-01', '2015-08-01')
 ;
 
 INSERT INTO degrees (education_id, level, title)
