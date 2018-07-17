@@ -7,8 +7,8 @@ const getAll = (req, res) => {
         .then(data => {
             res.status(200).json({
                 status: 'Success',
-                data: data,
-                message: 'Retrieved all experience'
+                message: 'Retrieved all experience',
+                data: data
             })
         })
         .catch(err => {
