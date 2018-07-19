@@ -67,12 +67,13 @@ CREATE TABLE tech_stacks (
     FOREIGN KEY (skill_id) REFERENCES skills(id)
 );
 
-DROP TABLE contact;
-CREATE TABLE contact (
+DROP TABLE basics;
+CREATE TABLE basics (
     first_name VARCHAR,
     last_name VARCHAR,
     email VARCHAR,
     phone VARCHAR,
+    website VARCHAR,
     linkedin VARCHAR,
     twitter VARCHAR,
     github VARCHAR,
@@ -139,7 +140,7 @@ VALUES
     (3, 1)
 ;
 
-INSERT INTO contact (first_name, last_name, email, phone, linkedin, twitter, github, pinterest, facebook, instagram) 
+INSERT INTO basics (first_name, last_name, email, phone, website, linkedin, twitter, github, pinterest, facebook, instagram) 
 VALUES 
-    ('Helen', 'Cho', 'helencho@ac.c4q.nyc', '5162447969', 'https://www.linkedin.com/in/haeyoungcho/', 'https://twitter.com/hellohelencho', 'https://github.com/helencho', null, null, null)
+    ('Helen', 'Cho', 'helencho@ac.c4q.nyc', '5162447969', 'http://helencho.io', 'https://www.linkedin.com/in/haeyoungcho/', 'https://twitter.com/hellohelencho', 'https://github.com/helencho', null, null, null)
 ;
