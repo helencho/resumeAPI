@@ -17,7 +17,7 @@ DROP TABLE experience;
 CREATE TABLE experience (
     id SERIAL UNIQUE,
     workplace VARCHAR NOT NULL,
-    title VARCHAR NOT NULL,
+    position VARCHAR NOT NULL,
     description VARCHAR NOT NULL,
     city VARCHAR,
     state VARCHAR NOT NULL,
@@ -89,7 +89,7 @@ VALUES
     ('Herricks High School', null, '2009', 'New Hyde Park', 'NY')
 ;
 
-INSERT INTO experience (workplace, title, description, city, state, start_date, end_date)
+INSERT INTO experience (workplace, position, description, city, state, start_date, end_date)
 VALUES 
     ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Gained hands on experience building dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09-18', '2018-06-28'),
     ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10-01', '2017-09-03'),
