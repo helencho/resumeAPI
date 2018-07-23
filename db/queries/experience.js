@@ -3,7 +3,7 @@ const db = require('../index')
 // GET : /experience 
 const getAll = (req, res) => {
     db
-        .any("SELECT * FROM experience;")
+        .any("SELECT workplace, position, description, city, state, to_char(start_date, 'mm/yyyy') AS start_date, to_char(end_date, 'mm/yyyy') AS end_date FROM experience;")
         .then(data => {
             res.status(200).json({
                 status: 'Success',
