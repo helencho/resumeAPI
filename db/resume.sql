@@ -91,9 +91,11 @@ VALUES
 
 INSERT INTO experience (workplace, position, description, city, state, start_date, end_date)
 VALUES 
-    ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Gained hands on experience building dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09-18', '2018-06-28'),
+    ('Coalition for Queens (C4Q)', 'Full Stack Web Development Fellow', 'Build dynamic web applications using Postgres, Express, React and Node.js', 'Long Island City', 'NY', '2017-09-18', '2018-06-28'),
     ('Choe & Oh, P.C.', 'Legal Assistant', 'Draft contracts, make bill payments, direct phone calls', 'New York', 'NY', '2015-10-01', '2017-09-03'),
-    ('Asian American Writers'' Workshop', 'Digital Media Intern', 'Design posters for events and curate Asian American literature on social media via Hootsuite', 'New York', 'NY', '2015-06-01', '2015-08-01')
+    ('Asian American Writers'' Workshop', 'Digital Media Intern', 'Design posters for events and curate Asian American literature on social media via Hootsuite', 'New York', 'NY', '2015-06-01', '2015-08-01'),
+    ('Creative Minds', 'Assistant to the Director', 'Assist the program director in all areas, such as scheduling classes, planning field trips, data entry, and writing/sending letters to parents', 'Flushing', 'NY', '2014-09-01', '2015-10-01'),
+    ('Creative Minds', 'After School Teacher', 'Babysit first-graders and help them with homework', 'Flushing', 'NY', '2014-06-01', '2015-10-01')
 ;
 
 INSERT INTO degrees (education_id, level, title)
