@@ -113,23 +113,23 @@ VALUES
 
 INSERT INTO skills (skill, description)
 VALUES 
-    ('JavaScript', 'Javascript'),
-    ('React', 'JavaScript framework'),
-    ('Redux', 'Flux framework'),
-    ('Node.js', 'Runtime environment'),
-    ('Express', 'Server-side web framework'),
-    ('Postgres', 'Database management'),
-    ('SQL', 'Structured Query Language'),
-    ('HTML', 'Templates'),
-    ('CSS', 'Styles'),
-    ('jQuery', 'Stylish JavaScript'),
+    ('JavaScript', 'High-level, interpreted programming language'),
+    ('React', 'JavaScript library for building user interfaces'),
+    ('Redux', 'JavaScript library for managing application state, commonly used with React or Angular'),
+    ('Node.js', 'Runtime environment that executes JavaScript code outside the browser'),
+    ('Express', 'Web application framework for Node'),
+    ('Postgres', 'Object relational database management system'),
+    ('SQL', 'Structured query language designed for managing data'),
+    ('HTML', 'Hypertext markup language for creating web pages and web applications'),
+    ('CSS', 'Cascading style sheet used for describing the presentation of a document written in HTML'),
+    ('jQuery', 'JavaScript library designed to simplify the client-side scripting of HTML'),
     ('RESTful API', 'Understanding REST architecture of the web'),
     ('Git', 'Version control'),
     ('GitHub', 'Version control online'),
     ('Heroku', 'Hosting and deploying applications'),
-    ('Illustrator', 'Vector software'),
-    ('Hootsuite', 'Social media manager'),
-    ('QuickBooks', 'Accounting system')
+    ('Inkscape', 'Open-source vector graphics editor, similar to Illustrator'),
+    ('Hootsuite', 'Social media management platform'),
+    ('QuickBooks', 'Accounting software')
 ;
 
 INSERT INTO tech_stacks (project_id, skill_id) 
